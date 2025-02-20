@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:layout_margin="5sp">
+
+<!--    navbar-->
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="0"
+
+        >
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                />
+            <ImageButton
+                android:layout_width="@dimen/nav_button_size"
+                android:layout_height="@dimen/nav_button_size"
+                android:background="@drawable/circular_base"
+                android:src="@drawable/baseline_home_24"
+                app:tint="@color/secondary"
+                android:id="@+id/homeButton"
+                />
+            <ImageButton
+                android:layout_width="@dimen/nav_button_size"
+                android:layout_height="@dimen/nav_button_size"
+                android:background="@drawable/circular_base"
+                android:src="@drawable/baseline_add_moderator_24"
+                app:tint="@color/secondary"
+                android:id="@+id/add"
+                />
+            <ImageButton
+                android:layout_width="@dimen/nav_button_size"
+                android:layout_height="@dimen/nav_button_size"
+                android:background="@drawable/circular_base"
+                android:src="@drawable/message"
+                app:tint="@color/secondary"
+                android:id="@+id/message"
+                />
+
+            <ImageButton
+                android:layout_width="@dimen/nav_button_size"
+                android:layout_height="@dimen/nav_button_size"
+                android:background="@drawable/circular_base"
+                android:src="@drawable/baseline_add_to_photos_24"
+                app:tint="@color/secondary"
+                android:id="@+id/photo"
+                />
+            <ImageButton
+                android:layout_width="@dimen/nav_button_size"
+                android:layout_height="@dimen/nav_button_size"
+                android:background="@drawable/circular_base"
+                android:src="@drawable/menu"
+                app:tint="@color/secondary"
+                android:id="@+id/menu"
+                />
+        </TableRow>
+    </TableLayout>
+
+
+
+    <!--    profile-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="@dimen/profile_image_size"
+            android:layout_height="@dimen/profile_image_size"
+            android:src="@drawable/warrior"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:padding="3dp"
+            android:id="@+id/profileImageView"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/profile_name"
+            android:textSize="20sp"
+            android:layout_toEndOf="@+id/profileImageView"
+            android:layout_alignParentTop="true"
+            android:id="@+id/profileNameView"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Feeling"
+            android:textSize="16sp"
+            android:layout_toEndOf="@+id/profileImageView"
+            android:layout_below="@+id/profileNameView"
+            android:id="@+id/profileStatusTitle"
+            />
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/emotions"
+            android:layout_toEndOf="@+id/profileStatusTitle"
+            android:layout_below="@+id/profileNameView"
+            android:spinnerMode="dropdown"
+
+            />
+
+    </RelativeLayout>
+
+<!--    post-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+    <ImageView
+        android:layout_width="@dimen/post_profile_image_size"
+        android:layout_height="@dimen/post_profile_image_size"
+        android:padding="3dp"
+        android:src="@drawable/hari"
+        android:id="@+id/postProfileImageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/post_profile_name"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/postProfileImageView"
+        android:id="@+id/postProfileImageNameView"
+
+
+        />
+    <TextView
+        android:id="@+id/postProfileTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/time"
+        app:layout_constraintStart_toEndOf="@+id/postProfileImageView"
+        app:layout_constraintTop_toBottomOf="@+id/postProfileImageNameView"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/post_content"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/postProfileImageView"
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/comeon"
+        app:layout_constraintTop_toBottomOf="@+id/postProfileImageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        android:id="@+id/postImage"
+
+         />
+
+    <ImageButton
+        android:layout_width="40sp"
+        android:layout_height="40sp"
+        app:layout_constraintTop_toBottomOf="@id/postImage"
+        android:src="@drawable/like"
+        app:tint="@color/tertiary"
+        android:background="@color/secondary"
+        android:id="@+id/postLike"
+        />
+    <ImageButton
+        android:layout_width="40sp"
+        android:layout_height="40sp"
+        app:layout_constraintTop_toBottomOf="@id/postImage"
+        android:src="@drawable/comment"
+        app:tint="@color/tertiary"
+        android:background="@color/secondary"
+        app:layout_constraintStart_toEndOf="@+id/postLike"
+        />
+    <ImageButton
+        android:layout_width="40sp"
+        android:layout_height="40sp"
+        app:layout_constraintTop_toBottomOf="@id/postImage"
+        android:src="@drawable/share"
+        app:tint="@color/tertiary"
+        android:background="@color/secondary"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Smile BOOk</string>
+    <string name="profile_name">Yakacha</string>
+    <string name="post_profile_name">Hari bahadur</string>
+    <string name="post_content">What a meme</string>
+    <string name="time"> 5mins ago</string>
+
+    <string-array name="emotions">
+        <item> exicted</item>
+        <item> Happy</item>
+        <item> Sad</item>
+        <item> irritated</item>
+
+    </string-array>
+</resources>
